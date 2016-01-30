@@ -1,5 +1,5 @@
 angular
-    .module('StoreApp', ['ngRoute'])
+    .module('StoreApp', ['ngRoute', 'archiveService'])
     .config(config);
 
 function config($provide, $routeProvider, $locationProvider) {

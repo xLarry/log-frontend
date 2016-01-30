@@ -1,8 +1,8 @@
 angular
     .module('StoreApp')
-    .controller('LogArchiveController', ['$http', '$scope', 'backend', LogArchiveController]);
+    .controller('LogArchiveController', ['$http', '$scope', 'backend', 'Task', LogArchiveController]);
 
-function LogArchiveController($http, $scope, backend) {
+function LogArchiveController($http, $scope, backend, Task) {
 	var vm = this;
 	
 	vm.data = 0;
@@ -17,10 +17,7 @@ function LogArchiveController($http, $scope, backend) {
 	}
 	
 	vm.updateTasks = function() {
-		$http.get('/api/log-files/task').then( (data) => {
-			console.log(data);
-			vm.tasks = data;
-		});
+		vm.tasks = Task.query();
 	}
 	
 	backend.on('statusUpdate', (data) => {
