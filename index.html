@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 4.5.4
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" ng-app="StoreApp">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>StoreAnalytics</title>
+		
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+		
+        <!-- BEGIN LAYOUT FIRST STYLES -->
+        <link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css" />
+        <!-- END LAYOUT FIRST STYLES -->
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link href="/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL PLUGINS -->
+		<!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="/assets/layouts/layout6/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/layouts/layout6/css/custom.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" /> 
+		
+		<base href="/" />
+	</head>
+    <!-- END HEAD -->
+
+    <body class="" ng-controller="AppController as app">
+        <!-- BEGIN HEADER -->
+        <header class="page-header">
+            <nav class="navbar" role="navigation">
+                <div class="container-fluid">
+                    <div class="havbar-header">
+                        <a id="index" class="navbar-brand" href="/"><b>STORE</b>ANALYTICS</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER -->
+        
+        <!-- BEGIN CONTAINER -->
+        <div class="container-fluid">
+            <div class="page-content page-content-popup">
+                <div class="page-content-fixed-header">
+                    <!-- BEGIN BREADCRUMBS -->
+                    <ul class="page-breadcrumb">
+                        <li>
+                            {{app.pageTitle}}
+                        </li>
+                        <li>
+                            Analyze
+                        </li>
+                        
+                    </ul>
+                    <!-- END BREADCRUMBS -->
+                    <div class="content-header-menu">
+                        <!-- BEGIN DROPDOWN AJAX MENU -->
+                        <div class="dropdown-ajax-menu btn-group">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </button>
+                            <ul class="dropdown-menu-v2">
+                                <li>
+                                    <a href="start.html">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="start.html">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END DROPDOWN AJAX MENU -->
+                        <!-- BEGIN MENU TOGGLER -->
+                        <button type="button" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="toggle-icon">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </span>
+                        </button>
+                        <!-- END MENU TOGGLER -->
+                    </div>
+                </div>
+                
+				<div ng-include="'tpl/sidebar.html'" class="page-sidebar-wrapper"> </div>
+				
+                <div class="page-fixed-main-content">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div ng-view></div>
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+				
+                <!-- BEGIN FOOTER -->
+                <p class="copyright-v2"></p>
+
+                <a href="#index" class="go2top">
+                    <i class="icon-arrow-up"></i>
+                </a>
+                <!-- END FOOTER -->
+            </div>
+        </div>
+        <!-- END CONTAINER -->
+    
+        <!--[if lt IE 9]>
+<script src="assets/global/plugins/respond.min.js"></script>
+<script src="assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/socket-io/socket.io.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+		
+		<!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+		
+		<!-- BEGIN CORE ANGULARJS PLUGINS -->
+        <script src="assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
+		<script src="assets/global/plugins/angularjs/plugins/angular-route.js" type="text/javascript"></script>
+        <!-- END CORE ANGULARJS PLUGINS -->
+		
+		<!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
+        <script src="js/main.js" type="text/javascript"></script>
+        <!-- END APP LEVEL ANGULARJS SCRIPTS -->
+		
+		<!-- AngularJS Controller -->
+		<script src="controllers/appController.js" type="text/javascript"></script>
+		<script src="controllers/log-files/logArchiveController.js" type="text/javascript"></script>
+		
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        
+		<!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="assets/layouts/layout6/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        <!-- END THEME LAYOUT SCRIPTS -->
+    </body>
+
+</html>
