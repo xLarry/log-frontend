@@ -6,7 +6,7 @@ function config($provide, $routeProvider, $locationProvider) {
 	
 	var globalConfig = {
 		
-	}
+	};
 	
 	var backend = io.connect('http://localhost:1337');
 	
