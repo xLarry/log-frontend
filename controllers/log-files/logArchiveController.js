@@ -12,15 +12,15 @@ function LogArchiveController($http, $scope, backend, Task) {
 	vm.createTask = function() {
 		console.log('createTask() triggered');
 		
-		backend.emit('createTask', '')
+		backend.emit('createTask', '');
 		vm.updateTasks();
-	}
+	};
 	
 	vm.updateTasks = function() {
 		vm.tasks = Task.query();
-	}
+	};
 	
-	backend.on('statusUpdate', (data) => {
+	backend.on('statusUpdate', function(data) {
 		console.log('Status update received: ' + data.percentage);
 		
 		$scope.$apply( function() {
