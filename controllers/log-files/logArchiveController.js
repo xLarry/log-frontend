@@ -1,30 +1,43 @@
 angular
     .module('StoreApp')
-    .controller('LogArchiveController', ['$http', '$scope', 'backend', 'Task', LogArchiveController]);
+    .controller('LogArchiveController', ['$filter', '$http', '$scope', 'backend', 'Task', LogArchiveController]);
 
-function LogArchiveController($http, $scope, backend, Task) {
+function LogArchiveController($filter, $http, $scope, backend, Task) {
 	var vm = this;
 	
 	vm.data = 0;
 	
-	vm.tasks = [];
+	vm.tasks = Task.query();
 	
 	vm.createTask = function() {
 		console.log('createTask() triggered');
 		
-		backend.emit('createTask', '')
-		vm.updateTasks();
+		Task.create();
 	}
 	
 	vm.updateTasks = function() {
 		vm.tasks = Task.query();
 	}
 	
-	backend.on('statusUpdate', (data) => {
-		console.log('Status update received: ' + data.percentage);
+	backend.on('taskCreated', (newTask) => {
+		console.log('taskCreated event received');
+		
+		vm.tasks.push(newTask);
+	});
+	
+	backend.on('progressUpdate', (data) => {
+		console.log('Progress update received for ' + data.taskId);
 		
 		$scope.$apply( function() {
-				vm.data = data.percentage;
+			$filter('filter')(vm.tasks, {id: data.taskId})[0].progress = data.progress.percentage;
+		});
+	});
+	
+	backend.on('statusUpdate', (data) => {
+		console.log('Status update received for ' + data.id);
+		
+		$scope.$apply( function() {
+			$filter('filter')(vm.tasks, {id: data.taskId})[0].status = data.status;
 		});
 	});
 	

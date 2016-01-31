@@ -1,3 +1,20 @@
 <h1>Archive</h1>
-{{vm.tasks}}
+
+<table>
+	<thead>
+		<th>id</th>
+		<th>logFile</th>
+		<th>status</th>
+		<th>progress</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="task in archive.tasks">
+			<td>{{task.id}}</td>
+			<td>{{task.logFile}}</td>
+			<td>{{task.status}}</td>
+			<td>{{task.progress}}</td>
+		</tr>
+	</tbody>
+</table>
+
 <button ng-click="archive.createTask()">Download File</button> {{archive.data}}
